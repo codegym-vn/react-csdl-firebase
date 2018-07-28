@@ -1,13 +1,7 @@
 import firebase from 'firebase'
+import configFirebase from './config/firebase'
 
-const config = {
-    apiKey: "AIzaSyBFWUoHiBdzjsmDc0GL-r8Wo5AD24JCLnY",
-    authDomain: "max-ildxxo.firebaseapp.com",
-    databaseURL: "https://max-ildxxo.firebaseio.com",
-    projectId: "max-ildxxo",
-    storageBucket: "max-ildxxo.appspot.com",
-    messagingSenderId: "130509062877"
-}
+const config = configFirebase || {}
 
 firebase.initializeApp(config)
 
