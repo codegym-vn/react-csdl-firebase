@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View, StyleSheet} from 'react-native'
 import {createStackNavigator} from 'react-navigation'
 import FormLogin from "./login/FormLogin"
+import {login} from "../services/APIServices"
 
 class LoginPage extends Component {
     static navigationOptions = {
@@ -9,13 +10,17 @@ class LoginPage extends Component {
         headerStyle: {
             backgroundColor: '#da552f'
         },
+        headerTintColor: '#fff',
         headerTitleStyle: {
             color: '#fff'
         }
     }
 
     _handleSubmit = (name) => {
-        console.log('login ', name)
+        login(name)
+            .then(response => {
+                this.props.navigation.navigate('Home')
+            })
     }
 
     render() {

@@ -8,6 +8,7 @@ class HomePage extends Component {
         headerStyle: {
             backgroundColor: '#da552f'
         },
+        headerTintColor: '#fff',
         headerTitleStyle: {
             color: '#fff'
         }

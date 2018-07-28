@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {View, TextInput, StyleSheet, Text, Button, Alert} from 'react-native'
+import {View, TextInput, StyleSheet, Button, Alert} from 'react-native'
 
 class FormLogin extends Component {
     state = {
@@ -17,6 +17,10 @@ class FormLogin extends Component {
         this._submit()
     }
 
+    _handleSubmitText = () => {
+        this._submit()
+    }
+
     _submit = () => {
         const {name} = this.state
         if (!name) {
@@ -26,6 +30,9 @@ class FormLogin extends Component {
         }
 
         this.props.onSubmit(name)
+        this.setState({
+            name: ''
+        })
     }
 
     render() {
@@ -35,8 +42,11 @@ class FormLogin extends Component {
             <View style={styles.container}>
                 <View style={styles.form}>
                     <TextInput
+                        style={styles.textInput}
                         placeholder="Your name"
+                        placeholderTextColor='gray'
                         onChangeText={this._handleOnChangeName}
+                        onSubmitEditing={this._handleSubmitText}
                         value={name}
                     />
                     <Button title="Submit" onPress={this._handlePressButton}/>
@@ -57,16 +67,17 @@ const styles = StyleSheet.create({
     form: {
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     textInput: {
+        backgroundColor: '#fff',
         color: '#333',
+        fontSize: 16,
         borderColor: '#999',
         borderWidth: 1,
         borderStyle: 'solid',
-        padding: 5,
-        maxWidth: 50
+        padding: 10,
     }
 })
 
