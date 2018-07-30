@@ -17,7 +17,7 @@ class LoginPage extends Component {
     }
 
     state = {
-        action: 'register'
+        action: 'login'
     }
 
     _handleChangeAction = action => {

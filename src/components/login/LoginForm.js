@@ -56,6 +56,7 @@ class LoginForm extends Component {
                         textContentType='emailAddress'
                         onChangeText={this._handleTextInputChange('email')}/>
                     <TextInput
+                        returnKeyType='done'
                         style={styles.textInput}
                         placeholder='Password'
                         value={password}

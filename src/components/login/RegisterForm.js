@@ -6,8 +6,9 @@ import {authSuccess} from "../../services/AuthServices"
 
 class RegisterForm extends Component {
     state = {
-        email: 'tutv@gmail.com',
-        password: '12345678'
+        name: '',
+        email: '',
+        password: ''
     }
 
     _handleTextInputChange = (field) => (value) => {
@@ -17,12 +18,12 @@ class RegisterForm extends Component {
     }
 
     _handlePressRegister = () => {
-        const {email, password} = this.state
+        const {email, name, password} = this.state
 
         if (!email) return Alert.alert('Please enter your email')
         if (!password) return Alert.alert('Please enter your password')
 
-        register({email, password})
+        register({email, password, name})
             .then(({user, token}) => {
                 authSuccess({user, token})
 
@@ -40,11 +41,18 @@ class RegisterForm extends Component {
     }
 
     render() {
-        const {email, password} = this.state
+        const {email, name, password} = this.state
 
         return (
             <View style={styles.container}>
                 <View style={styles.form}>
+                    <TextInput
+                        returnKeyType='done'
+                        style={styles.textInput}
+                        placeholder='Full name'
+                        value={name}
+                        textContentType='name'
+                        onChangeText={this._handleTextInputChange('name')}/>
                     <TextInput
                         returnKeyType='done'
                         style={styles.textInput}
@@ -54,6 +62,7 @@ class RegisterForm extends Component {
                         keyboardType='email-address'
                         onChangeText={this._handleTextInputChange('email')}/>
                     <TextInput
+                        returnKeyType='done'
                         style={styles.textInput}
                         placeholder='Password'
                         value={password}
