@@ -25,8 +25,9 @@ class RegisterForm extends Component {
 
         register({email, password, name})
             .then(({user, token}) => {
-                loginSuccess({user, token})
-
+                return loginSuccess({user, token})
+            })
+            .then(() => {
                 this.props.navigation.navigate('Home')
             })
             .catch(error => {
