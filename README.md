@@ -1,4 +1,4 @@
-# Sử dụng Firebase để xây dựng ứng dụng Product Hunt
+# Sử dụng Firebase để xây dựng chức năng đăng ký, đăng nhập
 
 ## Firebase
 Đăng kí tài khoản firebase sau đó tạo 1 project và copy config vào file: `src/config/firebase.json` như sau:
