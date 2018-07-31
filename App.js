@@ -4,18 +4,18 @@ import {createBottomTabNavigator} from 'react-navigation'
 import HomePage from './src/components/HomePage'
 import Ionicons from "react-native-vector-icons/Ionicons"
 import Logo from './src/assets/images/logo.png'
-import LoginPage from "./src/components/LoginPage"
+import AccountPage from "./src/components/AccountPage"
 import SubmitProductPage from "./src/components/SubmitProductPage"
 
 const iconMap = {
     Home: 'ios-home',
-    Login: 'ios-unlock',
+    Account: 'ios-unlock',
     Submit: 'ios-paper-plane'
 }
 
 export default createBottomTabNavigator(
     {
-        Login: LoginPage,
+        Account: AccountPage,
         Home: HomePage,
         Submit: SubmitProductPage
     },

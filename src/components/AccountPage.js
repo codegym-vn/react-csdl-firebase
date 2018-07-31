@@ -4,7 +4,7 @@ import {createStackNavigator} from 'react-navigation'
 import LoginForm from "./login/LoginForm"
 import RegisterForm from "./login/RegisterForm"
 
-class LoginPage extends Component {
+class AccountPage extends Component {
     static navigationOptions = {
         title: 'Account',
         headerStyle: {
@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
 
 export default createStackNavigator({
     Login: {
-        screen: LoginPage
+        screen: AccountPage
     },
 })

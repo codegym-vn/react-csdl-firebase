@@ -9,11 +9,17 @@ class LogoutButton extends Component {
 
     render() {
         return (
-            <View>
-                <Button title='Logout' onPress={this._handlePressLogout}/>
+            <View style={styles.container}>
+                <Button color='#999' title='Logout' onPress={this._handlePressLogout}/>
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        marginTop: 20
+    }
+})
 
 export default LogoutButton
