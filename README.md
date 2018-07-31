@@ -12,3 +12,11 @@
   "messagingSenderId": "xxx"
 }
 ```
+
+## Ảnh demo
+
+![Login](/demo/login.jpeg)
+
+![Register](/demo/register.jpeg)
+
+![Home page](/demo/home.jpeg)
