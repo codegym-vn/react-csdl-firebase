@@ -13,6 +13,9 @@
 }
 ```
 
+- Bật chế độ xác thực thông qua email và password
+![Email/password](/demo/auth-password.png)
+
 ## Ảnh demo
 
 ![Login](/demo/login.jpeg)
