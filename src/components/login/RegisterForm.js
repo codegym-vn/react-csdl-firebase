@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {View, TextInput, Button, Alert, StyleSheet, TouchableOpacity, Text} from 'react-native'
 import {register} from '../../services/APIServices'
 import PropTypes from 'prop-types'
-import {authSuccess} from "../../services/AuthServices"
+import {loginSuccess} from "../../services/AuthServices"
 
 class RegisterForm extends Component {
     state = {
@@ -25,7 +25,7 @@ class RegisterForm extends Component {
 
         register({email, password, name})
             .then(({user, token}) => {
-                authSuccess({user, token})
+                loginSuccess({user, token})
 
                 this.props.navigation.navigate('Home')
             })

@@ -8,6 +8,7 @@ import {
     unsubscribeAuthentication
 } from "../services/AuthServices"
 import WelcomeMessage from "./home/WelcomeMessage"
+import LogoutButton from "./home/LogoutButton"
 
 class HomePage extends Component {
     static navigationOptions = {
@@ -42,9 +43,15 @@ class HomePage extends Component {
     }
 
     render() {
+        const {isAuthenticated} = this.state
+
         return (
             <View style={styles.container}>
                 <WelcomeMessage {...this.state}/>
+
+                {
+                    isAuthenticated && <LogoutButton/>
+                }
             </View>
         )
     }

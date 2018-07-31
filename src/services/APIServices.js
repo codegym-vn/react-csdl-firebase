@@ -31,4 +31,21 @@ export const register = ({email, password = '', name = ''}) => {
 
 export const login = ({email, password = ''}) => {
     return auth.signInWithEmailAndPassword(email, password)
+        .then(({user}) => {
+            return user.getIdToken()
+                .then(accessToken => {
+                    const {refreshToken} = user
+
+                    const {providerData} = user
+                    const userData = Array.isArray(providerData) && providerData.length ? providerData[0] : {}
+
+                    return {
+                        user: userData,
+                        token: {
+                            accessToken,
+                            refreshToken
+                        }
+                    }
+                })
+        })
 }

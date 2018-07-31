@@ -15,7 +15,7 @@ export const logout = () => {
     _broadcast()
 }
 
-export const authSuccess = ({user, token}) => {
+export const loginSuccess = ({user, token}) => {
     _store.user = {
         ...user
     }
@@ -24,6 +24,8 @@ export const authSuccess = ({user, token}) => {
     }
     _store.isAuthenticated = true
     _broadcast()
+
+    return Promise.resolve(true)
 }
 
 const _broadcast = () => {

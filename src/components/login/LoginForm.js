@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {View, TextInput, Text, TouchableOpacity, Button, Alert, StyleSheet} from 'react-native'
 import {login} from "../../services/APIServices"
+import {loginSuccess} from "../../services/AuthServices"
 
 class LoginForm extends Component {
     state = {
@@ -22,12 +23,15 @@ class LoginForm extends Component {
         if (!password) return Alert.alert('Please enter your password')
 
         login({email, password})
-            .then(user => {
+            .then(({user, token}) => {
                 this.setState({
                     email: '',
                     password: ''
                 })
 
+                return loginSuccess({user, token})
+            })
+            .then(() => {
                 this.props.navigation.navigate('Home')
             })
             .catch(error => {
