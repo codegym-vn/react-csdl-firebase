@@ -3,7 +3,7 @@
 ## Mục tiêu
 
 - Hiểu được cách sử dụng các chức năng trong Firsebase.
-- Sử dụng **Firebase Authentication` để tạo xử lý các tác vục đăng nhập, đăng ký người dùng.
+- Sử dụng **Firebase Authentication** để tạo xử lý các tác vục đăng nhập, đăng ký người dùng.
 
 ## Nội dung
 
