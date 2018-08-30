@@ -1,5 +1,8 @@
 # Sử dụng Firebase để xây dựng chức năng đăng ký, đăng nhập
 
+<br />
+Mã nguồn Firebase được sử dụng để thực hành tại [CodeGym](https://codegym.vn)
+
 ## Mục tiêu
 
 - Hiểu được cách sử dụng các chức năng trong Firsebase.
